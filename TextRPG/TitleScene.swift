@@ -13,9 +13,9 @@ class TitleScene: BaseScene {
     var titleNode : SKLabelNode!
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-//        let playScene : PlayScene = PlayScene()
-//        let view : SKView = self.view!
-//        view.presentScene(playScene)
+        let playScene : PlayScene = PlayScene()
+        let view : SKView = self.view!
+        view.presentScene(playScene)
     }
     
     override func createSceneContents() -> Void
@@ -26,14 +26,14 @@ class TitleScene: BaseScene {
     
     func createHelloNode() -> Void
     {
-        self.titleNode = SKLabelNode(fontNamed:"Chalkduster")
-        let touchToStartNode : SKLabelNode = SKLabelNode(fontNamed: "Chalkduster")
+        self.titleNode = SKLabelNode(fontNamed: StyleGuide.font())
+        let touchToStartNode : SKLabelNode = SKLabelNode(fontNamed: StyleGuide.font())
         
         titleNode.text = "TextRPG"
-        titleNode.fontSize = 65
+        titleNode.fontSize = StyleGuide.titleFontSize()
         
         touchToStartNode.text = "Touch to Start"
-        touchToStartNode.fontSize = 35
+        touchToStartNode.fontSize = StyleGuide.subtitleFontSize()
         
         titleNode.addChild(touchToStartNode)
         

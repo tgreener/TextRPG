@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F51496251AE29C16006F4D2D /* DescriptiveStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51496241AE29C16006F4D2D /* DescriptiveStatistic.swift */; };
+		F51496271AE2F7F7006F4D2D /* CharacterResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51496261AE2F7F7006F4D2D /* CharacterResource.swift */; };
+		F514962A1AE2FB8E006F4D2D /* CharacterStatisticTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51496291AE2FB8E006F4D2D /* CharacterStatisticTest.swift */; };
+		F514962B1AE2FC87006F4D2D /* DescriptiveStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51496241AE29C16006F4D2D /* DescriptiveStatistic.swift */; };
+		F514962C1AE2FC8A006F4D2D /* CharacterResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51496261AE2F7F7006F4D2D /* CharacterResource.swift */; };
+		F514962E1AE31D58006F4D2D /* CharacterResourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F514962D1AE31D58006F4D2D /* CharacterResourceTest.swift */; };
+		F51496301AE31F4C006F4D2D /* WorldClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F514962F1AE31F4C006F4D2D /* WorldClock.swift */; };
+		F51496311AE31F4C006F4D2D /* WorldClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F514962F1AE31F4C006F4D2D /* WorldClock.swift */; };
+		F51496351AE4C19C006F4D2D /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51496341AE4C19C006F4D2D /* Notifier.swift */; };
+		F51496361AE4C19C006F4D2D /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51496341AE4C19C006F4D2D /* Notifier.swift */; };
+		F51496381AE4C2AA006F4D2D /* NotifierTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51496371AE4C2AA006F4D2D /* NotifierTest.swift */; };
+		F514963A1AEA037E006F4D2D /* WorldClockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51496391AEA037E006F4D2D /* WorldClockTest.swift */; };
 		F562A7CC1ADDDB9D00389139 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7CB1ADDDB9D00389139 /* AppDelegate.swift */; };
 		F562A7D01ADDDB9D00389139 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7CF1ADDDB9D00389139 /* TitleScene.swift */; };
 		F562A7D21ADDDB9D00389139 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7D11ADDDB9D00389139 /* GameViewController.swift */; };
@@ -14,6 +26,9 @@
 		F562A7DA1ADDDB9D00389139 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F562A7D81ADDDB9D00389139 /* LaunchScreen.xib */; };
 		F562A7E61ADDDB9D00389139 /* TextRPGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7E51ADDDB9D00389139 /* TextRPGTests.swift */; };
 		F562A7F01ADDDFC300389139 /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7EF1ADDDFC300389139 /* BaseScene.swift */; };
+		F562A7F21ADDE5E700389139 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7F11ADDE5E700389139 /* StyleGuide.swift */; };
+		F562A7F91ADDE80D00389139 /* TextDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7F81ADDE80D00389139 /* TextDisplay.swift */; };
+		F562A7FB1ADDEA5F00389139 /* PlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7FA1ADDEA5F00389139 /* PlayScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F51496241AE29C16006F4D2D /* DescriptiveStatistic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptiveStatistic.swift; sourceTree = "<group>"; };
+		F51496261AE2F7F7006F4D2D /* CharacterResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterResource.swift; sourceTree = "<group>"; };
+		F51496291AE2FB8E006F4D2D /* CharacterStatisticTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterStatisticTest.swift; sourceTree = "<group>"; };
+		F514962D1AE31D58006F4D2D /* CharacterResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterResourceTest.swift; sourceTree = "<group>"; };
+		F514962F1AE31F4C006F4D2D /* WorldClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldClock.swift; sourceTree = "<group>"; };
+		F51496341AE4C19C006F4D2D /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		F51496371AE4C2AA006F4D2D /* NotifierTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifierTest.swift; sourceTree = "<group>"; };
+		F51496391AEA037E006F4D2D /* WorldClockTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldClockTest.swift; sourceTree = "<group>"; };
 		F562A7C61ADDDB9D00389139 /* TextRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F562A7CA1ADDDB9D00389139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F562A7CB1ADDDB9D00389139 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +61,9 @@
 		F562A7E41ADDDB9D00389139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F562A7E51ADDDB9D00389139 /* TextRPGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRPGTests.swift; sourceTree = "<group>"; };
 		F562A7EF1ADDDFC300389139 /* BaseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseScene.swift; sourceTree = "<group>"; };
+		F562A7F11ADDE5E700389139 /* StyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
+		F562A7F81ADDE80D00389139 /* TextDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDisplay.swift; sourceTree = "<group>"; };
+		F562A7FA1ADDEA5F00389139 /* PlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +84,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F51496221AE29BCC006F4D2D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F562A7F71ADDE7DD00389139 /* Components */,
+				F562A7F61ADDE6AD00389139 /* Text */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		F51496231AE29BEA006F4D2D /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				F51496241AE29C16006F4D2D /* DescriptiveStatistic.swift */,
+				F51496261AE2F7F7006F4D2D /* CharacterResource.swift */,
+			);
+			name = Character;
+			sourceTree = "<group>";
+		};
+		F51496281AE2FA5E006F4D2D /* World */ = {
+			isa = PBXGroup;
+			children = (
+				F514962F1AE31F4C006F4D2D /* WorldClock.swift */,
+			);
+			name = World;
+			sourceTree = "<group>";
+		};
+		F51496321AE4C189006F4D2D /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				F51496331AE4C18E006F4D2D /* Communication */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		F51496331AE4C18E006F4D2D /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				F51496341AE4C19C006F4D2D /* Notifier.swift */,
+			);
+			name = Communication;
+			sourceTree = "<group>";
+		};
 		F562A7BD1ADDDB9D00389139 = {
 			isa = PBXGroup;
 			children = (
@@ -79,9 +147,12 @@
 		F562A7C81ADDDB9D00389139 /* TextRPG */ = {
 			isa = PBXGroup;
 			children = (
+				F51496321AE4C189006F4D2D /* Library */,
+				F51496281AE2FA5E006F4D2D /* World */,
+				F51496231AE29BEA006F4D2D /* Character */,
+				F51496221AE29BCC006F4D2D /* UI */,
+				F562A7F51ADDE69F00389139 /* Scenes */,
 				F562A7CB1ADDDB9D00389139 /* AppDelegate.swift */,
-				F562A7CF1ADDDB9D00389139 /* TitleScene.swift */,
-				F562A7EF1ADDDFC300389139 /* BaseScene.swift */,
 				F562A7D11ADDDB9D00389139 /* GameViewController.swift */,
 				F562A7D61ADDDB9D00389139 /* Images.xcassets */,
 				F562A7D81ADDDB9D00389139 /* LaunchScreen.xib */,
@@ -102,6 +173,10 @@
 			isa = PBXGroup;
 			children = (
 				F562A7E51ADDDB9D00389139 /* TextRPGTests.swift */,
+				F51496291AE2FB8E006F4D2D /* CharacterStatisticTest.swift */,
+				F514962D1AE31D58006F4D2D /* CharacterResourceTest.swift */,
+				F51496371AE4C2AA006F4D2D /* NotifierTest.swift */,
+				F51496391AEA037E006F4D2D /* WorldClockTest.swift */,
 				F562A7E31ADDDB9D00389139 /* Supporting Files */,
 			);
 			path = TextRPGTests;
@@ -113,6 +188,32 @@
 				F562A7E41ADDDB9D00389139 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F562A7F51ADDE69F00389139 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F562A7FA1ADDEA5F00389139 /* PlayScene.swift */,
+				F562A7CF1ADDDB9D00389139 /* TitleScene.swift */,
+				F562A7EF1ADDDFC300389139 /* BaseScene.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		F562A7F61ADDE6AD00389139 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				F562A7F11ADDE5E700389139 /* StyleGuide.swift */,
+			);
+			name = Text;
+			sourceTree = "<group>";
+		};
+		F562A7F71ADDE7DD00389139 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F562A7F81ADDE80D00389139 /* TextDisplay.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +316,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F562A7D01ADDDB9D00389139 /* TitleScene.swift in Sources */,
+				F51496351AE4C19C006F4D2D /* Notifier.swift in Sources */,
+				F562A7FB1ADDEA5F00389139 /* PlayScene.swift in Sources */,
+				F51496271AE2F7F7006F4D2D /* CharacterResource.swift in Sources */,
+				F562A7F91ADDE80D00389139 /* TextDisplay.swift in Sources */,
 				F562A7D21ADDDB9D00389139 /* GameViewController.swift in Sources */,
+				F51496301AE31F4C006F4D2D /* WorldClock.swift in Sources */,
 				F562A7CC1ADDDB9D00389139 /* AppDelegate.swift in Sources */,
+				F562A7F21ADDE5E700389139 /* StyleGuide.swift in Sources */,
 				F562A7F01ADDDFC300389139 /* BaseScene.swift in Sources */,
+				F51496251AE29C16006F4D2D /* DescriptiveStatistic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +334,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F562A7E61ADDDB9D00389139 /* TextRPGTests.swift in Sources */,
+				F51496311AE31F4C006F4D2D /* WorldClock.swift in Sources */,
+				F514962E1AE31D58006F4D2D /* CharacterResourceTest.swift in Sources */,
+				F51496381AE4C2AA006F4D2D /* NotifierTest.swift in Sources */,
+				F514962A1AE2FB8E006F4D2D /* CharacterStatisticTest.swift in Sources */,
+				F51496361AE4C19C006F4D2D /* Notifier.swift in Sources */,
+				F514962B1AE2FC87006F4D2D /* DescriptiveStatistic.swift in Sources */,
+				F514963A1AEA037E006F4D2D /* WorldClockTest.swift in Sources */,
+				F514962C1AE2FC8A006F4D2D /* CharacterResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +521,7 @@
 				F562A7EB1ADDDB9D00389139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F562A7EC1ADDDB9D00389139 /* Build configuration list for PBXNativeTarget "TextRPGTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +530,7 @@
 				F562A7EE1ADDDB9D00389139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
