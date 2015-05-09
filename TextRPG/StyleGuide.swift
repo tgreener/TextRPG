@@ -36,4 +36,8 @@ class StyleGuide {
     static func descriptiveTextColor() -> SKColor {
         return SKColor.whiteColor()
     }
+    
+    static func textDisplayPadding() -> CGFloat {
+        return 5
+    }
 }
