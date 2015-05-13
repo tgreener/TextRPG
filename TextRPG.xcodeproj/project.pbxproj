@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				F562A7F71ADDE7DD00389139 /* Components */,
-				F562A7F61ADDE6AD00389139 /* Text */,
+				F562A7F61ADDE6AD00389139 /* Style */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -236,12 +236,12 @@
 			name = Scenes;
 			sourceTree = "<group>";
 		};
-		F562A7F61ADDE6AD00389139 /* Text */ = {
+		F562A7F61ADDE6AD00389139 /* Style */ = {
 			isa = PBXGroup;
 			children = (
 				F562A7F11ADDE5E700389139 /* StyleGuide.swift */,
 			);
-			name = Text;
+			name = Style;
 			sourceTree = "<group>";
 		};
 		F562A7F71ADDE7DD00389139 /* Components */ = {

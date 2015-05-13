@@ -8,11 +8,23 @@
 
 import SpriteKit
 
-class TextDisplay : SKNode {
+class TextDisplay : SKSpriteNode {
     
     let borderNode : SKShapeNode = SKShapeNode()
     let textAnchorNode : SKNode = SKNode()
     var textNodes  : [SKLabelNode] = [SKLabelNode]()
+    var touchHandler : (() -> Void)! = nil {
+        didSet {
+            if touchHandler != nil {
+                self.userInteractionEnabled = true
+                self.color = SKColor.greenColor()
+            }
+            else {
+                self.userInteractionEnabled = false
+                self.color = SKColor.redColor()
+            }
+        }
+    }
     
     var text : String {
         set {
@@ -23,36 +35,52 @@ class TextDisplay : SKNode {
         }
     }
     
-    var size : CGSize = CGSizeMake(0, 0) {
+    override var size : CGSize  {
         didSet {
-            self.textAnchorNode.position = CGPointMake(-self.size.width / 2 + StyleGuide.textDisplayPadding(), self.size.height / 2 - lineHeight)
+            calcBorder()
         }
     }
     
-    var lineHeight : CGFloat = StyleGuide.titleFontSize()
+    override var anchorPoint : CGPoint {
+        didSet {
+            calcBorder()
+        }
+    }
     
-    init(at point: CGPoint) {
-        super.init()
+    var contentWidth : CGFloat {
+        get {
+            return self.size.width - (StyleGuide.textDisplayPadding() * 2)
+        }
+    }
+    
+    var lineHeight : CGFloat = StyleGuide.descriptiveTextSize()
+    
+    init(at point: CGPoint, size: CGSize) {
+        super.init(texture:nil, color: SKColor.redColor(), size: size)
+        self.anchorPoint = CGPoint(x: 0.5, y: 1)
         self.position = point
         self.addChild(borderNode)
         self.addChild(textAnchorNode)
+        calcBorder()
     }
     
     func calcBorder() {
         var borderPath = CGPathCreateMutable()
         CGPathMoveToPoint(borderPath, nil, 0, 0)
-        CGPathAddRoundedRect(borderPath, nil, CGRectMake(-self.size.width / 2, -self.size.height / 2, self.size.width, self.size.height), 0, 0)
+        CGPathAddRoundedRect(borderPath, nil, CGRectMake(-self.size.width * self.anchorPoint.x, -self.size.height * self.anchorPoint.y, self.size.width, self.size.height), 0, 0)
         
         borderNode.path = borderPath
         borderNode.strokeColor = StyleGuide.actionButtonTextColor()
-        borderNode.lineWidth = 2
+        borderNode.lineWidth = StyleGuide.borderStrokeWidth()
+        
+        self.textAnchorNode.position = CGPointMake(-self.size.width * self.anchorPoint.x + StyleGuide.textDisplayPadding(), self.size.height * (1-self.anchorPoint.y) - lineHeight)
     }
     
     func createLabelNode() -> SKLabelNode {
         let label = SKLabelNode()
         
         label.fontColor = StyleGuide.descriptiveTextColor()
-        label.fontSize = StyleGuide.titleFontSize()
+        label.fontSize = StyleGuide.descriptiveTextSize()
         label.fontName = StyleGuide.font()
         label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         
@@ -89,8 +117,8 @@ class TextDisplay : SKNode {
         label.text = text
         textNodes.append(label)
 
-        while (label.frame.width >  self.size.width - StyleGuide.textDisplayPadding()) && (self.size.width > 0) {
-            let ratio : Float = Float(self.size.width) / Float(label.frame.width)
+        while (label.frame.width >  self.contentWidth) && (self.size.width > 0) {
+            let ratio : Float = Float(self.contentWidth) / Float(label.frame.width)
             let index : String.Index = advance(label.text.startIndex, Int(ratio * Float(count(label.text))))
             var newIndex : String.Index = findNearestWhitespaceSplit(to: index, given: label.text)
             
@@ -118,8 +146,6 @@ class TextDisplay : SKNode {
             
             textAnchorNode.addChild(textNodes[i])
         }
-        
-        calcBorder()
     }
     
     func getText() -> String {
@@ -143,6 +169,18 @@ class TextDisplay : SKNode {
     
     override func containsPoint(p: CGPoint) -> Bool {
         return borderNode.containsPoint(p);
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let touch = (touches as! Set<UITouch>).first
+        if touch == nil { return }
+        let touchPoint = touch!.locationInNode(borderNode)
+        if borderNode.containsPoint(touchPoint) {
+            self.touchHandler()
+        }
+        else {
+            super.touchesBegan(touches, withEvent: event)
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {

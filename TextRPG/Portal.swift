@@ -15,14 +15,15 @@ protocol PortalListener : class {
 protocol Portal {
     func addListener(listener: PortalListener) -> Void
     func traverse() -> Void
+    var targetRoom : Room { get }
 }
 
 class GamePortal : Portal {
-    let room : Room
+    let targetRoom : Room
     let notifier : Notifier<PortalListener> = Notifier<PortalListener>()
     
     init(to room: Room) {
-        self.room = room
+        self.targetRoom = room
     }
     
     func addListener(listener: PortalListener) {
@@ -30,6 +31,6 @@ class GamePortal : Portal {
     }
     
     func traverse() {
-        notifier.notify({ listener in listener.playerUsed(portal:self, to: self.room) })
+        notifier.notify({ listener in listener.playerUsed(portal:self, to: self.targetRoom) })
     }
 }

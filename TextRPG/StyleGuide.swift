@@ -40,4 +40,16 @@ class StyleGuide {
     static func textDisplayPadding() -> CGFloat {
         return 5
     }
+    
+    static func elementMargin() -> CGFloat {
+        return 3
+    }
+    
+    static func borderStrokeWidth() -> CGFloat {
+        return 2
+    }
+    
+    static func defaultBackgroundColor() -> SKColor {
+        return SKColor(red: 0.33, green: 0.33, blue: 0.36, alpha: 1.0)
+    }
 }
