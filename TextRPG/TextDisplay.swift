@@ -8,6 +8,8 @@
 
 import SpriteKit
 
+typealias TouchHandler = ()->Void
+
 class TextDisplay : SKSpriteNode {
     
     let borderNode : SKShapeNode = SKShapeNode()
@@ -17,15 +19,13 @@ class TextDisplay : SKSpriteNode {
         didSet {
             if touchHandler != nil {
                 self.userInteractionEnabled = true
-                self.color = SKColor.greenColor()
             }
             else {
                 self.userInteractionEnabled = false
-                self.color = SKColor.redColor()
             }
         }
     }
-    
+
     var text : String {
         set {
             set(text: newValue)
@@ -38,6 +38,7 @@ class TextDisplay : SKSpriteNode {
     override var size : CGSize  {
         didSet {
             calcBorder()
+            set(text: getText())
         }
     }
     
@@ -55,10 +56,10 @@ class TextDisplay : SKSpriteNode {
     
     var lineHeight : CGFloat = StyleGuide.descriptiveTextSize()
     
-    init(at point: CGPoint, size: CGSize) {
-        super.init(texture:nil, color: SKColor.redColor(), size: size)
+    init(at position: CGPoint, size: CGSize) {
+        super.init(texture:nil, color: StyleGuide.defaultBackgroundColor(), size: size)
         self.anchorPoint = CGPoint(x: 0.5, y: 1)
-        self.position = point
+        self.position = position
         self.addChild(borderNode)
         self.addChild(textAnchorNode)
         calcBorder()
@@ -67,7 +68,7 @@ class TextDisplay : SKSpriteNode {
     func calcBorder() {
         var borderPath = CGPathCreateMutable()
         CGPathMoveToPoint(borderPath, nil, 0, 0)
-        CGPathAddRoundedRect(borderPath, nil, CGRectMake(-self.size.width * self.anchorPoint.x, -self.size.height * self.anchorPoint.y, self.size.width, self.size.height), 0, 0)
+        CGPathAddRoundedRect(borderPath, nil, CGRectMake(-self.size.width * self.anchorPoint.x, -self.size.height * self.anchorPoint.y, self.size.width, self.size.height), 2, 2)
         
         borderNode.path = borderPath
         borderNode.strokeColor = StyleGuide.actionButtonTextColor()
@@ -165,15 +166,14 @@ class TextDisplay : SKSpriteNode {
         return result
     }
     
-
-    
-    override func containsPoint(p: CGPoint) -> Bool {
-        return borderNode.containsPoint(p);
-    }
-    
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         let touch = (touches as! Set<UITouch>).first
-        if touch == nil { return }
+        
+        if touch == nil {
+            CGPoint(x: CGRectGetMidX(self.frame)*0.5, y: CGRectGetMidY(self.frame)*1.5)
+            return
+        }
+        
         let touchPoint = touch!.locationInNode(borderNode)
         if borderNode.containsPoint(touchPoint) {
             self.touchHandler()

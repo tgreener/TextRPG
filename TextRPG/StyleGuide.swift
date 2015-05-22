@@ -50,6 +50,6 @@ class StyleGuide {
     }
     
     static func defaultBackgroundColor() -> SKColor {
-        return SKColor(red: 0.33, green: 0.33, blue: 0.36, alpha: 1.0)
+        return SKColor(red: 0.495, green: 0.495, blue: 0.54, alpha: 0.34)
     }
 }

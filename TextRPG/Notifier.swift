@@ -9,22 +9,22 @@
 
 import Foundation
 
-class Notifier<ListenerType : AnyObject> {
-    var listeners : [NotifierListenerWrapper<ListenerType>] = [NotifierListenerWrapper<ListenerType>]()
+class Notifier<ListenerType> {
+    var listeners : [ListenerType] = [ListenerType]()
     
     func addListener(listener: ListenerType) {
-        listeners.append(NotifierListenerWrapper<ListenerType>(value: listener))
+        listeners.append(listener)
     }
     
     func notify(closure: (ListenerType) -> Void) {
         for listener in listeners {
-            closure(listener.value)
+            closure(listener)
         }
     }
 }
 
 class NotifierListenerWrapper<ListenerType : AnyObject> {
-    unowned let value : ListenerType // TODO: Use this once the compiler is updated. The unowned and AnyObject parts throw it for a loop (figuratively).
+    let value : ListenerType // TODO: Use this once the compiler is updated. The unowned and AnyObject parts throw it for a loop (figuratively).
     init(value: ListenerType) {
         self.value = value
     }

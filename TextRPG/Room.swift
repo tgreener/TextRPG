@@ -8,10 +8,11 @@
 
 import SpriteKit
 
-protocol Room {
+protocol Room : EntityContainer {
     var name : String { get }
     var description : String { get }
-    var entities : [Entity] { get set }
+    var entities : [Entity] { get }
+    func insert(entity: Entity) -> Void
 }
 
 class WorldRoom : Room {
@@ -38,5 +39,12 @@ class WorldRoom : Room {
     init() {
         roomNumber = WorldRoom.roomCounter
         WorldRoom.roomCounter++
+    }
+    
+    func insert(entity: Entity) {
+        entities.append(entity)
+        if let pickUp : PickUp = entity.pickUp {
+            (pickUp as! PickUpItem).container = self
+        }
     }
 }

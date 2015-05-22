@@ -39,6 +39,11 @@
 		F5D5E9FE1AF83D7E00140347 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5E9FC1AF83D7E00140347 /* Player.swift */; };
 		F5D5EA001AFBA3A900140347 /* EntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5E9FF1AFBA3A900140347 /* EntityFactory.swift */; };
 		F5D5EA011AFBA3A900140347 /* EntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5E9FF1AFBA3A900140347 /* EntityFactory.swift */; };
+		F5DED2821B04361200AA4583 /* ActionDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED2811B04361200AA4583 /* ActionDisplay.swift */; };
+		F5DED2891B043AEB00AA4583 /* CommandQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED2881B043AEB00AA4583 /* CommandQueue.swift */; };
+		F5DED28B1B045B2900AA4583 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED28A1B045B2900AA4583 /* Inventory.swift */; };
+		F5DED28D1B045EEE00AA4583 /* PickUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED28C1B045EEE00AA4583 /* PickUp.swift */; };
+		F5DED28E1B05730200AA4583 /* PickUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED28C1B045EEE00AA4583 /* PickUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +84,10 @@
 		F562A7FA1ADDEA5F00389139 /* PlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayScene.swift; sourceTree = "<group>"; };
 		F5D5E9FC1AF83D7E00140347 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F5D5E9FF1AFBA3A900140347 /* EntityFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityFactory.swift; sourceTree = "<group>"; };
+		F5DED2811B04361200AA4583 /* ActionDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionDisplay.swift; sourceTree = "<group>"; };
+		F5DED2881B043AEB00AA4583 /* CommandQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandQueue.swift; sourceTree = "<group>"; };
+		F5DED28A1B045B2900AA4583 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		F5DED28C1B045EEE00AA4583 /* PickUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				F51496431AEA90B0006F4D2D /* Portal.swift */,
+				F5DED28A1B045B2900AA4583 /* Inventory.swift */,
+				F5DED28C1B045EEE00AA4583 /* PickUp.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -187,6 +198,7 @@
 				F51496281AE2FA5E006F4D2D /* World */,
 				F51496231AE29BEA006F4D2D /* Character */,
 				F51496221AE29BCC006F4D2D /* UI */,
+				F5DED2871B043AD000AA4583 /* Command */,
 				F562A7F51ADDE69F00389139 /* Scenes */,
 				F562A7CB1ADDDB9D00389139 /* AppDelegate.swift */,
 				F562A7D11ADDDB9D00389139 /* GameViewController.swift */,
@@ -248,8 +260,17 @@
 			isa = PBXGroup;
 			children = (
 				F562A7F81ADDE80D00389139 /* TextDisplay.swift */,
+				F5DED2811B04361200AA4583 /* ActionDisplay.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		F5DED2871B043AD000AA4583 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				F5DED2881B043AEB00AA4583 /* CommandQueue.swift */,
+			);
+			name = Command;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +322,7 @@
 				TargetAttributes = {
 					F562A7C51ADDDB9D00389139 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 6LP8SH262R;
 					};
 					F562A7DE1ADDDB9D00389139 = {
 						CreatedOnToolsVersion = 6.3;
@@ -354,12 +376,16 @@
 				F562A7D01ADDDB9D00389139 /* TitleScene.swift in Sources */,
 				F51496351AE4C19C006F4D2D /* Notifier.swift in Sources */,
 				F514963C1AEA8E01006F4D2D /* Room.swift in Sources */,
+				F5DED2821B04361200AA4583 /* ActionDisplay.swift in Sources */,
 				F5D5EA001AFBA3A900140347 /* EntityFactory.swift in Sources */,
 				F51496401AEA9070006F4D2D /* Entity.swift in Sources */,
 				F562A7FB1ADDEA5F00389139 /* PlayScene.swift in Sources */,
+				F5DED28D1B045EEE00AA4583 /* PickUp.swift in Sources */,
+				F5DED2891B043AEB00AA4583 /* CommandQueue.swift in Sources */,
 				F51496271AE2F7F7006F4D2D /* CharacterResource.swift in Sources */,
 				F562A7F91ADDE80D00389139 /* TextDisplay.swift in Sources */,
 				F562A7D21ADDDB9D00389139 /* GameViewController.swift in Sources */,
+				F5DED28B1B045B2900AA4583 /* Inventory.swift in Sources */,
 				F51496301AE31F4C006F4D2D /* WorldClock.swift in Sources */,
 				F562A7CC1ADDDB9D00389139 /* AppDelegate.swift in Sources */,
 				F562A7F21ADDE5E700389139 /* StyleGuide.swift in Sources */,
@@ -376,6 +402,7 @@
 			files = (
 				F562A7E61ADDDB9D00389139 /* TextRPGTests.swift in Sources */,
 				F51496311AE31F4C006F4D2D /* WorldClock.swift in Sources */,
+				F5DED28E1B05730200AA4583 /* PickUp.swift in Sources */,
 				F514962E1AE31D58006F4D2D /* CharacterResourceTest.swift in Sources */,
 				F51496381AE4C2AA006F4D2D /* NotifierTest.swift in Sources */,
 				F51496411AEA9070006F4D2D /* Entity.swift in Sources */,
@@ -498,9 +525,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TextRPG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -508,9 +538,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TextRPG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -12,7 +12,7 @@ protocol PlayerCharacter {
     var currentLocation : Room! { get set }
 }
 
-class Player : PlayerCharacter {
+class Player : Entity, PlayerCharacter {
     var currentLocation : Room! = nil {
         willSet(newLocation) {
             
@@ -21,5 +21,5 @@ class Player : PlayerCharacter {
             
         }
     }
-    static let instance : PlayerCharacter = Player()
+    static let instance : PlayerCharacter = Player(portalComponent: nil, pickUpComponent: nil)
 }

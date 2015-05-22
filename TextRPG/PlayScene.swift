@@ -8,25 +8,27 @@
 
 import SpriteKit
 
-class PlayScene: BaseScene, PortalListener {
+class PlayScene: BaseScene, PortalListener, PickUpListener {
     
     var display : TextDisplay! = nil
     var actionBox : TextDisplay! = nil
-    var actionDisplays: [TextDisplay] = [TextDisplay]()
+    var actionDisplays: [ActionDisplay] = [ActionDisplay]()
+    var rooms : [Room] = [Room]()
     
-//    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 //        print("touched")
-//    }
+    }
     
     override func createSceneContents() {
         super.createSceneContents()
+        
         initGame()
         self.backgroundColor = StyleGuide.defaultBackgroundColor()
         
         let displaySize = CGSizeMake(self.frame.width - StyleGuide.elementMargin() * 2, (self.frame.height / 2) - StyleGuide.elementMargin() * 2)
         display = TextDisplay(at: CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - StyleGuide.elementMargin()), size: displaySize)
         addChild(display)
-        
+
         let actionBoxSize = CGSizeMake(self.frame.width - StyleGuide.elementMargin() * 2, (self.frame.height / 3) - StyleGuide.elementMargin() * 2)
         actionBox = TextDisplay(at: CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(display.frame) - StyleGuide.elementMargin()), size: actionBoxSize)
         addChild(actionBox)
@@ -38,14 +40,33 @@ class PlayScene: BaseScene, PortalListener {
         clearActionDisplays()
         display.text = "You are currently in \(Player.instance.currentLocation.description)"
         
+        func createDefaultTouchHandler(timeStep t: WorldTime, command : Command) -> Command{
+            return {
+                Commander.instance.submitCommand(command)
+                self.runSimulation(t)
+            }
+        }
+        
         var currentRoom : Room = Player.instance.currentLocation
         for entity in currentRoom.entities {
             if let p = entity.portal {
-                let portalDisplay = createPortalAction(p)
-                portalDisplay.touchHandler = {
+                let handler : TouchHandler = createDefaultTouchHandler(timeStep: 0.0) {
                     p.traverse()
                 }
+                
+                let portalDisplay : ActionDisplay = ActionDisplay(touchHandler: handler, containingDisplay: actionBox)
+                portalDisplay.text = "Take portal to \(p.targetRoom.name)"
                 actionDisplays.append(portalDisplay)
+            }
+            
+            if let pu : PickUp = entity.pickUp {
+                let handler : TouchHandler = createDefaultTouchHandler(timeStep: 0.0) {
+                    pu.pickUp(andGiveTo: Player.instance)
+                }
+                
+                let pickUpDisplay : ActionDisplay = ActionDisplay(touchHandler: handler, containingDisplay: actionBox)
+                pickUpDisplay.text = "Pick up \(pu.description)"
+                actionDisplays.append(pickUpDisplay)
             }
         }
         
@@ -60,15 +81,14 @@ class PlayScene: BaseScene, PortalListener {
         for actionDisplay in actionDisplays {
             actionDisplay.removeFromParent()
         }
+        
+        actionDisplays.removeAll(keepCapacity: false)
     }
     
-    func createPortalAction(portal: Portal) -> TextDisplay {
-        let portalDisplaySize = CGSizeMake(actionBox.size.width - StyleGuide.elementMargin() * 2, StyleGuide.actionButtonTextSize())
-        let portalDisplay : TextDisplay = TextDisplay(at: CGPoint.zeroPoint, size:portalDisplaySize) // TODO: Need to make TextDisplay font resizable for titles and action buttons
-        
-        portalDisplay.text = "Take portal to \(portal.targetRoom.name)"
-        
-        return portalDisplay
+    func runSimulation(timeStep: WorldTime) {
+        // Update all the things
+        Commander.instance.runCommands()
+        refreshDisplay()
     }
     
     func initGame() {
@@ -77,25 +97,37 @@ class PlayScene: BaseScene, PortalListener {
         var room0 : Room = WorldRoom()
         var room1 : Room = WorldRoom()
         var room2 : Room = WorldRoom()
+        
+        rooms.append(room0)
+        rooms.append(room1)
+        rooms.append(room2)
+        
         let portalA : Entity = EntityFactory.createEntityWithPortal(to: room1)
         let portalB : Entity = EntityFactory.createEntityWithPortal(to: room0)
         let portalC : Entity = EntityFactory.createEntityWithPortal(to: room2)
         
-        room0.entities.append(portalA)
-        room0.entities.append(portalC)
-        room1.entities.append(portalB)
-        room2.entities.append(portalB)
+        let aRock : Entity = EntityFactory.createRock()
+        
+        room0.insert(aRock)
+        room0.insert(portalA)
+        room0.insert(portalC)
+        room1.insert(portalB)
+        room2.insert(portalB)
         
         player.currentLocation = room0
         
         portalA.portal?.addListener(self)
         portalB.portal?.addListener(self)
+        portalC.portal?.addListener(self)
+        aRock.pickUp?.addListener(self)
     }
     
     func playerUsed(#portal: Portal, to room: Room) {
         var player = Player.instance
         player.currentLocation = room
-        refreshDisplay()
     }
     
+    func picked(up item: Entity, by player: PlayerCharacter, from container: EntityContainer) {
+        container.entities = container.entities.filter{ entity in return entity !== item }
+    }
 }
