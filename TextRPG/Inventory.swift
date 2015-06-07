@@ -8,10 +8,17 @@
 
 import Foundation
 
-protocol Inventory {
+protocol Inventory : EntityContainer {
     
 }
 
 class InventoryComponent : Inventory {
+    var entities : [Entity] = [Entity]()
     
+    func insert(entity: Entity) -> Void {
+        entities.append(entity)
+        if let pickUp : PickUp = entity.pickUp {
+            (pickUp as! PickUpItem).container = self
+        }
+    }
 }

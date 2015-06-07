@@ -15,6 +15,7 @@ protocol WorldClock {
     var currentDay  : WorldTime { get }
     var currentHour : WorldTime { get }
     var currentMinute : WorldTime { get }
+    var currentSecond : WorldTime { get }
     
     func progressClock(by time: WorldTime) -> Void
     func addListener(listener: WorldClockListener) -> Void
@@ -76,9 +77,23 @@ class GameWorldClock : WorldClock {
     
     var currentMinute : WorldTime {
         get {
-            let timeInCurrentHour : WorldTime = currentTime - ((currentHour * TimeDefs.secondsInHour) + (currentDay * TimeDefs.secondsInDay))
+            let timeInCurrentHour : WorldTime = currentTime -
+                ((currentHour * TimeDefs.secondsInHour) +
+                 (currentDay * TimeDefs.secondsInDay))
             
             return floor(timeInCurrentHour / TimeDefs.secondsInMinute)
+        }
+    }
+    
+    var currentSecond : WorldTime {
+        get {
+            let timeInCurrentMinute : WorldTime = currentTime -
+                ((currentHour * TimeDefs.secondsInHour) +
+                 (currentDay * TimeDefs.secondsInDay) +
+                 (currentMinute * TimeDefs.secondsInMinute))
+            
+            return floor(timeInCurrentMinute)
+
         }
     }
     
@@ -102,6 +117,6 @@ class GameWorldClock : WorldClock {
     }
     
     func toString() -> String {
-        return String(format: "Day %.0f, %.0f:%.0f", arguments: [currentDay, currentHour, currentMinute]) // TODO: Implement world clock to string
+        return String(format: "Day %.f, %.f:%02.f:%02.f", arguments: [currentDay, currentHour, currentMinute, currentSecond])
     }
 }

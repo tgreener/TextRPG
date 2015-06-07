@@ -25,16 +25,12 @@ class StyleGuide {
         return 48
     }
     
-    static func actionButtonTextColor() -> SKColor {
-        return SKColor.whiteColor()
+    static func inventoryItemTextSize() -> CGFloat {
+        return 35
     }
     
     static func descriptiveTextSize() -> CGFloat {
         return 16
-    }
-    
-    static func descriptiveTextColor() -> SKColor {
-        return SKColor.whiteColor()
     }
     
     static func textDisplayPadding() -> CGFloat {
@@ -51,5 +47,13 @@ class StyleGuide {
     
     static func defaultBackgroundColor() -> SKColor {
         return SKColor(red: 0.495, green: 0.495, blue: 0.54, alpha: 0.34)
+    }
+    
+    static func actionButtonTextColor() -> SKColor {
+        return SKColor.whiteColor()
+    }
+    
+    static func descriptiveTextColor() -> SKColor {
+        return SKColor.whiteColor()
     }
 }

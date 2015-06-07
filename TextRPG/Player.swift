@@ -10,6 +10,7 @@ import Foundation
 
 protocol PlayerCharacter {
     var currentLocation : Room! { get set }
+    var inventory : Inventory? { get }
 }
 
 class Player : Entity, PlayerCharacter {
@@ -21,5 +22,5 @@ class Player : Entity, PlayerCharacter {
             
         }
     }
-    static let instance : PlayerCharacter = Player(portalComponent: nil, pickUpComponent: nil)
+    static let instance : Player = Player(portalComponent: nil, pickUpComponent: nil, inventoryComponent: InventoryComponent())
 }

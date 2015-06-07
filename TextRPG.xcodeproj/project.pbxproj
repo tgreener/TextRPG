@@ -35,6 +35,12 @@
 		F562A7F21ADDE5E700389139 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7F11ADDE5E700389139 /* StyleGuide.swift */; };
 		F562A7F91ADDE80D00389139 /* TextDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7F81ADDE80D00389139 /* TextDisplay.swift */; };
 		F562A7FB1ADDEA5F00389139 /* PlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7FA1ADDEA5F00389139 /* PlayScene.swift */; };
+		F5D2AC9A1B24F2BF00292501 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2AC991B24F2BF00292501 /* Action.swift */; };
+		F5D2AC9B1B24F2D400292501 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2AC991B24F2BF00292501 /* Action.swift */; };
+		F5D507DD1B1814960099BFBE /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED28A1B045B2900AA4583 /* Inventory.swift */; };
+		F5D507DF1B1832450099BFBE /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D507DE1B1832450099BFBE /* World.swift */; };
+		F5D507E01B1832450099BFBE /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D507DE1B1832450099BFBE /* World.swift */; };
+		F5D507E11B1BC4B50099BFBE /* CommandQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED2881B043AEB00AA4583 /* CommandQueue.swift */; };
 		F5D5E9FD1AF83D7E00140347 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5E9FC1AF83D7E00140347 /* Player.swift */; };
 		F5D5E9FE1AF83D7E00140347 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5E9FC1AF83D7E00140347 /* Player.swift */; };
 		F5D5EA001AFBA3A900140347 /* EntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5E9FF1AFBA3A900140347 /* EntityFactory.swift */; };
@@ -82,6 +88,8 @@
 		F562A7F11ADDE5E700389139 /* StyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		F562A7F81ADDE80D00389139 /* TextDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDisplay.swift; sourceTree = "<group>"; };
 		F562A7FA1ADDEA5F00389139 /* PlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayScene.swift; sourceTree = "<group>"; };
+		F5D2AC991B24F2BF00292501 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		F5D507DE1B1832450099BFBE /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		F5D5E9FC1AF83D7E00140347 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F5D5E9FF1AFBA3A900140347 /* EntityFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityFactory.swift; sourceTree = "<group>"; };
 		F5DED2811B04361200AA4583 /* ActionDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionDisplay.swift; sourceTree = "<group>"; };
@@ -132,6 +140,7 @@
 			children = (
 				F514962F1AE31F4C006F4D2D /* WorldClock.swift */,
 				F514963B1AEA8E01006F4D2D /* Room.swift */,
+				F5D507DE1B1832450099BFBE /* World.swift */,
 			);
 			name = World;
 			sourceTree = "<group>";
@@ -168,6 +177,7 @@
 				F51496431AEA90B0006F4D2D /* Portal.swift */,
 				F5DED28A1B045B2900AA4583 /* Inventory.swift */,
 				F5DED28C1B045EEE00AA4583 /* PickUp.swift */,
+				F5D2AC991B24F2BF00292501 /* Action.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -384,7 +394,9 @@
 				F5DED2891B043AEB00AA4583 /* CommandQueue.swift in Sources */,
 				F51496271AE2F7F7006F4D2D /* CharacterResource.swift in Sources */,
 				F562A7F91ADDE80D00389139 /* TextDisplay.swift in Sources */,
+				F5D2AC9A1B24F2BF00292501 /* Action.swift in Sources */,
 				F562A7D21ADDDB9D00389139 /* GameViewController.swift in Sources */,
+				F5D507DF1B1832450099BFBE /* World.swift in Sources */,
 				F5DED28B1B045B2900AA4583 /* Inventory.swift in Sources */,
 				F51496301AE31F4C006F4D2D /* WorldClock.swift in Sources */,
 				F562A7CC1ADDDB9D00389139 /* AppDelegate.swift in Sources */,
@@ -401,13 +413,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F562A7E61ADDDB9D00389139 /* TextRPGTests.swift in Sources */,
+				F5D2AC9B1B24F2D400292501 /* Action.swift in Sources */,
+				F5D507E01B1832450099BFBE /* World.swift in Sources */,
 				F51496311AE31F4C006F4D2D /* WorldClock.swift in Sources */,
 				F5DED28E1B05730200AA4583 /* PickUp.swift in Sources */,
 				F514962E1AE31D58006F4D2D /* CharacterResourceTest.swift in Sources */,
 				F51496381AE4C2AA006F4D2D /* NotifierTest.swift in Sources */,
 				F51496411AEA9070006F4D2D /* Entity.swift in Sources */,
+				F5D507E11B1BC4B50099BFBE /* CommandQueue.swift in Sources */,
 				F5D5EA011AFBA3A900140347 /* EntityFactory.swift in Sources */,
 				F5D5E9FE1AF83D7E00140347 /* Player.swift in Sources */,
+				F5D507DD1B1814960099BFBE /* Inventory.swift in Sources */,
 				F51496451AEA90B0006F4D2D /* Portal.swift in Sources */,
 				F514963D1AEA8E01006F4D2D /* Room.swift in Sources */,
 				F514962A1AE2FB8E006F4D2D /* CharacterStatisticTest.swift in Sources */,

@@ -17,7 +17,8 @@ protocol CommandQueue {
 }
 
 class Commander : CommandQueue {
-    static let instance : CommandQueue = Commander()    
+    static let instance : CommandQueue = Commander()
+    var world : World!
     
     var commands : [Command] = [Command]()
     
@@ -33,5 +34,4 @@ class Commander : CommandQueue {
         for command in commands { command() }
         commands.removeAll(keepCapacity: false)
     }
-    
 }

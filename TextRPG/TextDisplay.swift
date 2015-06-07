@@ -54,6 +54,14 @@ class TextDisplay : SKSpriteNode {
         }
     }
     
+    var fontSize : CGFloat = StyleGuide.descriptiveTextSize() {
+        didSet {
+            for node in textNodes {
+                node.fontSize = self.fontSize
+            }
+        }
+    }
+    
     var lineHeight : CGFloat = StyleGuide.descriptiveTextSize()
     
     init(at position: CGPoint, size: CGSize) {
@@ -74,16 +82,17 @@ class TextDisplay : SKSpriteNode {
         borderNode.strokeColor = StyleGuide.actionButtonTextColor()
         borderNode.lineWidth = StyleGuide.borderStrokeWidth()
         
-        self.textAnchorNode.position = CGPointMake(-self.size.width * self.anchorPoint.x + StyleGuide.textDisplayPadding(), self.size.height * (1-self.anchorPoint.y) - lineHeight)
+        self.textAnchorNode.position = CGPointMake(-self.size.width * self.anchorPoint.x + StyleGuide.textDisplayPadding(), self.size.height * (1-self.anchorPoint.y) - StyleGuide.textDisplayPadding())
     }
     
     func createLabelNode() -> SKLabelNode {
         let label = SKLabelNode()
         
         label.fontColor = StyleGuide.descriptiveTextColor()
-        label.fontSize = StyleGuide.descriptiveTextSize()
+        label.fontSize = self.fontSize
         label.fontName = StyleGuide.font()
         label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        label.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Top
         
         return label
     }
