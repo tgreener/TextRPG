@@ -46,5 +46,8 @@ class WorldRoom : Room {
         if let pickUp : PickUp = entity.pickUp {
             (pickUp as! PickUpItem).container = self
         }
+        if let location : Location = entity.location {
+            (location as! LocationComponent).currentLocation = self
+        }
     }
 }

@@ -14,13 +14,16 @@ protocol PlayerCharacter {
 }
 
 class Player : Entity, PlayerCharacter {
-    var currentLocation : Room! = nil {
-        willSet(newLocation) {
-            
+    var currentLocation : Room! {
+        get {
+            return self.location?.currentLocation
         }
-        didSet(oldLocation) {
-            
+        set {
+            if let location = self.location {
+                (location as! LocationComponent).currentLocation = newValue
+            }
         }
     }
-    static let instance : Player = Player(portalComponent: nil, pickUpComponent: nil, inventoryComponent: InventoryComponent())
+    
+    static let instance : Player = Player(portalComponent: nil, pickUpComponent: nil, inventoryComponent: InventoryComponent(), locationComponent: LocationComponent())
 }

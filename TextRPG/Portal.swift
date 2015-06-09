@@ -38,6 +38,9 @@ class GamePortal : Portal {
     }
     
     func traverse(actor: Entity) {
+        if let location = actor.location {
+            (location as! LocationComponent).currentLocation = targetRoom
+        }
         notifier.notify({ listener in listener.entity(actor, used:self, to: self.targetRoom) })
     }
     

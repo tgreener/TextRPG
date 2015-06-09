@@ -45,6 +45,8 @@
 		F5D5E9FE1AF83D7E00140347 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5E9FC1AF83D7E00140347 /* Player.swift */; };
 		F5D5EA001AFBA3A900140347 /* EntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5E9FF1AFBA3A900140347 /* EntityFactory.swift */; };
 		F5D5EA011AFBA3A900140347 /* EntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5E9FF1AFBA3A900140347 /* EntityFactory.swift */; };
+		F5D6A5AB1B26A8D000E1B722 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6A5AA1B26A8D000E1B722 /* Location.swift */; };
+		F5D6A5AC1B26A95F00E1B722 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6A5AA1B26A8D000E1B722 /* Location.swift */; };
 		F5DED2821B04361200AA4583 /* ActionDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED2811B04361200AA4583 /* ActionDisplay.swift */; };
 		F5DED2891B043AEB00AA4583 /* CommandQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED2881B043AEB00AA4583 /* CommandQueue.swift */; };
 		F5DED28B1B045B2900AA4583 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED28A1B045B2900AA4583 /* Inventory.swift */; };
@@ -92,6 +94,7 @@
 		F5D507DE1B1832450099BFBE /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		F5D5E9FC1AF83D7E00140347 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F5D5E9FF1AFBA3A900140347 /* EntityFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityFactory.swift; sourceTree = "<group>"; };
+		F5D6A5AA1B26A8D000E1B722 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F5DED2811B04361200AA4583 /* ActionDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionDisplay.swift; sourceTree = "<group>"; };
 		F5DED2881B043AEB00AA4583 /* CommandQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandQueue.swift; sourceTree = "<group>"; };
 		F5DED28A1B045B2900AA4583 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
@@ -178,6 +181,7 @@
 				F5DED28A1B045B2900AA4583 /* Inventory.swift */,
 				F5DED28C1B045EEE00AA4583 /* PickUp.swift */,
 				F5D2AC991B24F2BF00292501 /* Action.swift */,
+				F5D6A5AA1B26A8D000E1B722 /* Location.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -397,6 +401,7 @@
 				F5D2AC9A1B24F2BF00292501 /* Action.swift in Sources */,
 				F562A7D21ADDDB9D00389139 /* GameViewController.swift in Sources */,
 				F5D507DF1B1832450099BFBE /* World.swift in Sources */,
+				F5D6A5AB1B26A8D000E1B722 /* Location.swift in Sources */,
 				F5DED28B1B045B2900AA4583 /* Inventory.swift in Sources */,
 				F51496301AE31F4C006F4D2D /* WorldClock.swift in Sources */,
 				F562A7CC1ADDDB9D00389139 /* AppDelegate.swift in Sources */,
@@ -414,6 +419,7 @@
 			files = (
 				F562A7E61ADDDB9D00389139 /* TextRPGTests.swift in Sources */,
 				F5D2AC9B1B24F2D400292501 /* Action.swift in Sources */,
+				F5D6A5AC1B26A95F00E1B722 /* Location.swift in Sources */,
 				F5D507E01B1832450099BFBE /* World.swift in Sources */,
 				F51496311AE31F4C006F4D2D /* WorldClock.swift in Sources */,
 				F5DED28E1B05730200AA4583 /* PickUp.swift in Sources */,

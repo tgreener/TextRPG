@@ -13,33 +13,41 @@ class World : PortalListener, PickUpListener {
     var rooms : [Room] = [Room]()
     
     init() {
-        var player : PlayerCharacter = Player.instance
+        var player : Player = Player.instance
         
-        var room0 : Room = WorldRoom()
-        var room1 : Room = WorldRoom()
-        var room2 : Room = WorldRoom()
+        let room0 : Room = WorldRoom()
+        let room1 : Room = WorldRoom()
+        let room2 : Room = WorldRoom()
+        let room3 : Room = WorldRoom()
         
         rooms.append(room0)
         rooms.append(room1)
         rooms.append(room2)
+        rooms.append(room3)
         
         let portalA : Entity = EntityFactory.createEntityWithPortal(to: room1)
         let portalB : Entity = EntityFactory.createEntityWithPortal(to: room0)
         let portalC : Entity = EntityFactory.createEntityWithPortal(to: room2)
+        let portalD : Entity = EntityFactory.createEntityWithPortal(to: room3)
+        let portalE : Entity = EntityFactory.createEntityWithPortal(to: room2)
         
-        let aRock : Entity = EntityFactory.createRock()
+        let aRock   : Entity = EntityFactory.createRock()
         
         room0.insert(aRock)
         room0.insert(portalA)
         room0.insert(portalC)
         room1.insert(portalB)
         room2.insert(portalB)
+        room2.insert(portalD)
+        room3.insert(portalE)
         
-        player.currentLocation = room0
+        room0.insert(player)
         
         portalA.portal?.addListener(self)
         portalB.portal?.addListener(self)
         portalC.portal?.addListener(self)
+        portalD.portal?.addListener(self)
+        portalE.portal?.addListener(self)
         aRock.pickUp?.addListener(self)
     }
     
@@ -50,8 +58,7 @@ class World : PortalListener, PickUpListener {
     }
     
     func entity(entity: Entity, used portal: Portal, to room: Room) {
-        var player = Player.instance
-        player.currentLocation = room
+        
     }
     
     func picked(up item: Entity, by entity: Entity, from container: EntityContainer) {

@@ -17,6 +17,7 @@ class Entity {
     let portal : Portal?
     let pickUp : PickUp?
     let inventory : Inventory?
+    let location : Location?
     var actions : [Action] = [Action]()
     
     var description : String {
@@ -33,10 +34,11 @@ class Entity {
         }
     }
     
-    init(portalComponent : Portal?, pickUpComponent : PickUp?, inventoryComponent : Inventory?) {
+    init(portalComponent : Portal?, pickUpComponent : PickUp?, inventoryComponent : Inventory?, locationComponent : Location?) {
         portal = portalComponent
         pickUp = pickUpComponent
         inventory = inventoryComponent
+        location = locationComponent
         
         pickUp?.entity = self
         if let a = portal { actions.append(a) }
