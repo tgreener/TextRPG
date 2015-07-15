@@ -35,6 +35,8 @@
 		F562A7F21ADDE5E700389139 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7F11ADDE5E700389139 /* StyleGuide.swift */; };
 		F562A7F91ADDE80D00389139 /* TextDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7F81ADDE80D00389139 /* TextDisplay.swift */; };
 		F562A7FB1ADDEA5F00389139 /* PlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562A7FA1ADDEA5F00389139 /* PlayScene.swift */; };
+		F5693ED31B5719D40077D172 /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5693ED21B5719D40077D172 /* Ref.swift */; };
+		F5693ED41B571A170077D172 /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5693ED21B5719D40077D172 /* Ref.swift */; };
 		F5D2AC9A1B24F2BF00292501 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2AC991B24F2BF00292501 /* Action.swift */; };
 		F5D2AC9B1B24F2D400292501 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2AC991B24F2BF00292501 /* Action.swift */; };
 		F5D507DD1B1814960099BFBE /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED28A1B045B2900AA4583 /* Inventory.swift */; };
@@ -47,6 +49,8 @@
 		F5D5EA011AFBA3A900140347 /* EntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5E9FF1AFBA3A900140347 /* EntityFactory.swift */; };
 		F5D6A5AB1B26A8D000E1B722 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6A5AA1B26A8D000E1B722 /* Location.swift */; };
 		F5D6A5AC1B26A95F00E1B722 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6A5AA1B26A8D000E1B722 /* Location.swift */; };
+		F5D6A5AE1B27EBCD00E1B722 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6A5AD1B27EBCD00E1B722 /* Generator.swift */; };
+		F5D6A5AF1B27ECC400E1B722 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6A5AD1B27EBCD00E1B722 /* Generator.swift */; };
 		F5DED2821B04361200AA4583 /* ActionDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED2811B04361200AA4583 /* ActionDisplay.swift */; };
 		F5DED2891B043AEB00AA4583 /* CommandQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED2881B043AEB00AA4583 /* CommandQueue.swift */; };
 		F5DED28B1B045B2900AA4583 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DED28A1B045B2900AA4583 /* Inventory.swift */; };
@@ -90,11 +94,13 @@
 		F562A7F11ADDE5E700389139 /* StyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		F562A7F81ADDE80D00389139 /* TextDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDisplay.swift; sourceTree = "<group>"; };
 		F562A7FA1ADDEA5F00389139 /* PlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayScene.swift; sourceTree = "<group>"; };
+		F5693ED21B5719D40077D172 /* Ref.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
 		F5D2AC991B24F2BF00292501 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		F5D507DE1B1832450099BFBE /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		F5D5E9FC1AF83D7E00140347 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F5D5E9FF1AFBA3A900140347 /* EntityFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityFactory.swift; sourceTree = "<group>"; };
 		F5D6A5AA1B26A8D000E1B722 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F5D6A5AD1B27EBCD00E1B722 /* Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		F5DED2811B04361200AA4583 /* ActionDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionDisplay.swift; sourceTree = "<group>"; };
 		F5DED2881B043AEB00AA4583 /* CommandQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandQueue.swift; sourceTree = "<group>"; };
 		F5DED28A1B045B2900AA4583 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				F51496331AE4C18E006F4D2D /* Communication */,
+				F5693ED21B5719D40077D172 /* Ref.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 				F5DED28C1B045EEE00AA4583 /* PickUp.swift */,
 				F5D2AC991B24F2BF00292501 /* Action.swift */,
 				F5D6A5AA1B26A8D000E1B722 /* Location.swift */,
+				F5D6A5AD1B27EBCD00E1B722 /* Generator.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -396,6 +404,7 @@
 				F562A7FB1ADDEA5F00389139 /* PlayScene.swift in Sources */,
 				F5DED28D1B045EEE00AA4583 /* PickUp.swift in Sources */,
 				F5DED2891B043AEB00AA4583 /* CommandQueue.swift in Sources */,
+				F5D6A5AE1B27EBCD00E1B722 /* Generator.swift in Sources */,
 				F51496271AE2F7F7006F4D2D /* CharacterResource.swift in Sources */,
 				F562A7F91ADDE80D00389139 /* TextDisplay.swift in Sources */,
 				F5D2AC9A1B24F2BF00292501 /* Action.swift in Sources */,
@@ -405,6 +414,7 @@
 				F5DED28B1B045B2900AA4583 /* Inventory.swift in Sources */,
 				F51496301AE31F4C006F4D2D /* WorldClock.swift in Sources */,
 				F562A7CC1ADDDB9D00389139 /* AppDelegate.swift in Sources */,
+				F5693ED31B5719D40077D172 /* Ref.swift in Sources */,
 				F562A7F21ADDE5E700389139 /* StyleGuide.swift in Sources */,
 				F562A7F01ADDDFC300389139 /* BaseScene.swift in Sources */,
 				F51496251AE29C16006F4D2D /* DescriptiveStatistic.swift in Sources */,
@@ -432,9 +442,11 @@
 				F5D507DD1B1814960099BFBE /* Inventory.swift in Sources */,
 				F51496451AEA90B0006F4D2D /* Portal.swift in Sources */,
 				F514963D1AEA8E01006F4D2D /* Room.swift in Sources */,
+				F5693ED41B571A170077D172 /* Ref.swift in Sources */,
 				F514962A1AE2FB8E006F4D2D /* CharacterStatisticTest.swift in Sources */,
 				F51496361AE4C19C006F4D2D /* Notifier.swift in Sources */,
 				F514962B1AE2FC87006F4D2D /* DescriptiveStatistic.swift in Sources */,
+				F5D6A5AF1B27ECC400E1B722 /* Generator.swift in Sources */,
 				F514963A1AEA037E006F4D2D /* WorldClockTest.swift in Sources */,
 				F514962C1AE2FC8A006F4D2D /* CharacterResource.swift in Sources */,
 			);

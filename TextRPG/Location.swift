@@ -13,5 +13,5 @@ protocol Location {
 }
 
 class LocationComponent : Location {
-    var currentLocation : Room! = nil
+    weak var currentLocation : Room! = nil
 }

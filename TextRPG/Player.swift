@@ -25,5 +25,11 @@ class Player : Entity, PlayerCharacter {
         }
     }
     
-    static let instance : Player = Player(portalComponent: nil, pickUpComponent: nil, inventoryComponent: InventoryComponent(), locationComponent: LocationComponent())
+    static let instance : Player = Player(
+        portalComponent: nil,
+        pickUpComponent: nil,
+        inventoryComponent: InventoryComponent(),
+        locationComponent: LocationComponent(),
+        generatorComponent: nil
+    )
 }

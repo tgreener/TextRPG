@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EntityContainer : class {
+protocol EntityContainer : class, GeneratorListener {
     var entities : [Entity] { get set }
     func insert(entity: Entity) -> Void
 }
@@ -18,6 +18,7 @@ class Entity {
     let pickUp : PickUp?
     let inventory : Inventory?
     let location : Location?
+    let generator : Generator?
     var actions : [Action] = [Action]()
     
     var description : String {
@@ -29,16 +30,23 @@ class Entity {
                 return "\(pu.description)"
             }
             else {
-                return "a nondescript object."
+                return "a nondescript object"
             }
         }
     }
     
-    init(portalComponent : Portal?, pickUpComponent : PickUp?, inventoryComponent : Inventory?, locationComponent : Location?) {
+    init(
+        portalComponent : Portal?,
+        pickUpComponent : PickUp?,
+        inventoryComponent : Inventory?,
+        locationComponent : Location?,
+        generatorComponent : Generator?
+        ) {
         portal = portalComponent
         pickUp = pickUpComponent
         inventory = inventoryComponent
         location = locationComponent
+        generator = generatorComponent
         
         pickUp?.entity = self
         if let a = portal { actions.append(a) }

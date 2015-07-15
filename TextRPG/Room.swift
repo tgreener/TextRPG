@@ -50,4 +50,8 @@ class WorldRoom : Room {
             (location as! LocationComponent).currentLocation = self
         }
     }
+    
+    func onGenerated(#entity: Entity) {
+        insert(entity)
+    }
 }

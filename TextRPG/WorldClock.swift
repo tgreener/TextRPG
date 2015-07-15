@@ -26,10 +26,27 @@ protocol WorldClockListener : class {
     func worldClockDidProgress(by delta: WorldTime, currentTime : WorldTime) -> Void
 }
 
+struct TimeRange {
+    let minTime : WorldTime
+    let maxTime : WorldTime
+    var range   : WorldTime {
+        get {
+            return maxTime - minTime
+        }
+    }
+    
+    init(min: WorldTime, max: WorldTime) {
+        assert(max >= min, "Time range max time is less than min time")
+        minTime = min
+        maxTime = max
+    }
+}
+
 struct TimeDefs {
     static let secondsInMinute : WorldTime = 60
     static let secondsInHour   : WorldTime = secondsInMinute * 60
     static let secondsInDay    : WorldTime = secondsInHour * 24
+    static let zeroTime : WorldTime = 0
     
     static func get(minutes m: UInt) -> WorldTime {
         return TimeDefs.secondsInMinute * WorldTime(m)

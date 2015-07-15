@@ -32,6 +32,7 @@ class World : PortalListener, PickUpListener {
         let portalE : Entity = EntityFactory.createEntityWithPortal(to: room2)
         
         let aRock   : Entity = EntityFactory.createRock()
+        let twigGenerator : Entity = EntityFactory.createTwigGenerator()
         
         room0.insert(aRock)
         room0.insert(portalA)
@@ -40,8 +41,9 @@ class World : PortalListener, PickUpListener {
         room2.insert(portalB)
         room2.insert(portalD)
         room3.insert(portalE)
+        room3.insert(twigGenerator)
         
-        room0.insert(player)
+        player.currentLocation = room0
         
         portalA.portal?.addListener(self)
         portalB.portal?.addListener(self)
@@ -49,6 +51,9 @@ class World : PortalListener, PickUpListener {
         portalD.portal?.addListener(self)
         portalE.portal?.addListener(self)
         aRock.pickUp?.addListener(self)
+        
+        twigGenerator.generator?.addListener(room3)
+        clock.addListener(twigGenerator.generator!)
     }
     
     func runSimulation(timeStep: WorldTime) {

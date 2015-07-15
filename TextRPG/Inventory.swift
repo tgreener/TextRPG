@@ -21,4 +21,8 @@ class InventoryComponent : Inventory {
             (pickUp as! PickUpItem).container = self
         }
     }
+    
+    func onGenerated(#entity: Entity) {
+        insert(entity)
+    }
 }
