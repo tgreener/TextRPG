@@ -38,7 +38,7 @@ class WorldRoom : Room {
     
     init() {
         roomNumber = WorldRoom.roomCounter
-        WorldRoom.roomCounter++
+        WorldRoom.roomCounter += 1
     }
     
     func insert(entity: Entity) {
@@ -51,7 +51,7 @@ class WorldRoom : Room {
         }
     }
     
-    func onGenerated(#entity: Entity) {
+    func onGenerated(entity entity: Entity) {
         insert(entity)
     }
 }

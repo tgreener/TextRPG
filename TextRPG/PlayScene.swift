@@ -64,13 +64,13 @@ class PlayScene: BaseScene {
         let inventory : EntityContainer = Player.instance.inventory as! EntityContainer
         
         for entity in inventory.entities {
-            let itemDisplay : TextDisplay = TextDisplay(at: CGPoint.zeroPoint, size: CGSizeMake(100, self.inventoryBox.frame.height - StyleGuide.elementMargin() * 2))
+            let itemDisplay : TextDisplay = TextDisplay(at: CGPoint.zero, size: CGSizeMake(100, self.inventoryBox.frame.height - StyleGuide.elementMargin() * 2))
             itemDisplay.text = entity.pickUp!.name
-            itemDisplay.anchorPoint = CGPoint.zeroPoint
+            itemDisplay.anchorPoint = CGPoint.zero
             inventoryDisplays.append(itemDisplay)
         }
         
-        for var i : Int = 0; i < inventoryDisplays.count; i++ {
+        for i : Int in 0 ..< inventoryDisplays.count {
             let xPos : CGFloat = (-inventoryBox.frame.width / 2) + (StyleGuide.elementMargin() + (inventoryDisplays[i].size.width * CGFloat(i)))
             let yPos : CGFloat = -StyleGuide.elementMargin()
             inventoryDisplays[i].anchorPoint = CGPoint(x: 0, y: 1)
@@ -97,7 +97,7 @@ class PlayScene: BaseScene {
             }
         }
         
-        var currentRoom : Room = Player.instance.currentLocation
+        let currentRoom : Room = Player.instance.currentLocation
         for entity in currentRoom.entities {
             for action in entity.actions {
                 let handler : TouchHandler = createDefaultTouchHandler(timeStep: action.duration) {
@@ -110,7 +110,7 @@ class PlayScene: BaseScene {
             }
         }
         
-        for var i : Int = 0; i < actionDisplays.count; i++ {
+        for i : Int in 0 ..< actionDisplays.count {
             let yPos : CGFloat = ((StyleGuide.elementMargin() + actionDisplays[i].size.height) * -CGFloat(i)) - StyleGuide.elementMargin()
             actionDisplays[i].position = CGPoint(x: 0, y: yPos)
             actionBox.addChild(actionDisplays[i])

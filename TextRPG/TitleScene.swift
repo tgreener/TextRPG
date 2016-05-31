@@ -12,7 +12,7 @@ class TitleScene: BaseScene {
     
     var titleNode : SKLabelNode!
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let playScene : PlayScene = PlayScene()
         let view : SKView = self.view!
         view.presentScene(playScene)
@@ -37,7 +37,6 @@ class TitleScene: BaseScene {
         
         titleNode.addChild(touchToStartNode)
         
-        let size = self.size
         let pos = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         titleNode.position = pos
         touchToStartNode.position = CGPointMake(0, -50)

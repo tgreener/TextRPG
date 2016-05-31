@@ -16,7 +16,7 @@ class ActionDisplay : TextDisplay {
     init(touchHandler: TouchHandler, containingDisplay : TextDisplay) {
         self.durationAnchorNode = SKNode()
         self.durationLabel = SKLabelNode()
-        super.init(at: CGPoint.zeroPoint, size: CGSizeMake(containingDisplay.size.width - StyleGuide.elementMargin() * 2, StyleGuide.actionButtonTextSize()))
+        super.init(at: CGPoint.zero, size: CGSizeMake(containingDisplay.size.width - StyleGuide.elementMargin() * 2, StyleGuide.actionButtonTextSize()))
         self.touchHandler = touchHandler
         
         self.durationLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right

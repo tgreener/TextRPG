@@ -17,15 +17,15 @@ class WorldClockTest: XCTestCase {
     }
     
     func testGetCurrenDay() -> Void {
-        assert(basicallyEquals(clock.currentDay, 10), "Wrong day value")
+        assert(basicallyEquals(clock.currentDay, b: 10), "Wrong day value")
     }
     
     func testGetCurrentHour() -> Void {
-        assert(basicallyEquals(clock.currentHour, 5), "Wrong hour value")
+        assert(basicallyEquals(clock.currentHour, b: 5), "Wrong hour value")
     }
     
     func testGetCurrentMinute() -> Void {
-        assert(basicallyEquals(clock.currentMinute, 40), "Wrong minute value")
+        assert(basicallyEquals(clock.currentMinute, b: 40), "Wrong minute value")
     }
     
     func testToString() -> Void {
@@ -34,18 +34,18 @@ class WorldClockTest: XCTestCase {
     
     func testProgressClock() -> Void {
         clock.progressClock(by: TimeDefs.get(minutes: 20))
-        assert(basicallyEquals(clock.currentMinute, 0), "Wrong Minutes: \(clock.currentMinute)")
-        assert(basicallyEquals(clock.currentHour, 6), "Wrong Hour: \(clock.currentHour)")
-        assert(basicallyEquals(clock.currentDay, 10), "Wrong Day: \(clock.currentDay)")
+        assert(basicallyEquals(clock.currentMinute, b: 0), "Wrong Minutes: \(clock.currentMinute)")
+        assert(basicallyEquals(clock.currentHour, b: 6), "Wrong Hour: \(clock.currentHour)")
+        assert(basicallyEquals(clock.currentDay, b: 10), "Wrong Day: \(clock.currentDay)")
         
         clock.progressClock(by: TimeDefs.get(hours: 18))
-        assert(basicallyEquals(clock.currentMinute, 0), "Wrong Minutes: \(clock.currentMinute)")
-        assert(basicallyEquals(clock.currentHour, 0), "Wrong Hour: \(clock.currentHour)")
-        assert(basicallyEquals(clock.currentDay, 11), "Wrong Day: \(clock.currentDay)")
+        assert(basicallyEquals(clock.currentMinute, b: 0), "Wrong Minutes: \(clock.currentMinute)")
+        assert(basicallyEquals(clock.currentHour, b: 0), "Wrong Hour: \(clock.currentHour)")
+        assert(basicallyEquals(clock.currentDay, b: 11), "Wrong Day: \(clock.currentDay)")
 
         clock.progressClock(by: TimeDefs.get(hours: 5, minutes: 40))
-        assert(basicallyEquals(clock.currentMinute, 40), "Wrong Minutes: \(clock.currentMinute)")
-        assert(basicallyEquals(clock.currentHour, 5), "Wrong Hour: \(clock.currentHour)")
-        assert(basicallyEquals(clock.currentDay, 11), "Wrong Day: \(clock.currentDay)")
+        assert(basicallyEquals(clock.currentMinute, b: 40), "Wrong Minutes: \(clock.currentMinute)")
+        assert(basicallyEquals(clock.currentHour, b: 5), "Wrong Hour: \(clock.currentHour)")
+        assert(basicallyEquals(clock.currentDay, b: 11), "Wrong Day: \(clock.currentDay)")
     }
 }

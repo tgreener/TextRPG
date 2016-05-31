@@ -9,7 +9,7 @@
 import Foundation
 
 protocol GeneratorListener {
-    func onGenerated(#entity: Entity) -> Void
+    func onGenerated(entity entity: Entity) -> Void
 }
 
 protocol Generator : WorldClockListener {

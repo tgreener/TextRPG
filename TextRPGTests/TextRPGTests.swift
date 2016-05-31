@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 
 func basicallyEquals(a: Float, b: Float) -> Bool {
-    return basicallyEquals(Double(a), Double(b))
+    return basicallyEquals(Double(a), b: Double(b))
 }
 
 func basicallyEquals(a: Double, b: Double) -> Bool {

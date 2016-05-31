@@ -74,7 +74,7 @@ class TextDisplay : SKSpriteNode {
     }
     
     func calcBorder() {
-        var borderPath = CGPathCreateMutable()
+        let borderPath = CGPathCreateMutable()
         CGPathMoveToPoint(borderPath, nil, 0, 0)
         CGPathAddRoundedRect(borderPath, nil, CGRectMake(-self.size.width * self.anchorPoint.x, -self.size.height * self.anchorPoint.y, self.size.width, self.size.height), 2, 2)
         
@@ -97,21 +97,23 @@ class TextDisplay : SKSpriteNode {
         return label
     }
     
-    func set(#text: String) -> Void {
+    func set(text text: String) -> Void {
        
         func findNearestWhitespaceSplit(to i: String.Index, given str: String) -> String.Index {
             
             let whiteSet = NSCharacterSet.whitespaceCharacterSet()
             
             var index = i
-            for ; index != str.startIndex; index = index.predecessor() {
+            while index != str.startIndex {
                 let s = String(str[index])
                 let ix = s.startIndex
                 let ix2 = s.endIndex
-                let result = s.rangeOfCharacterFromSet(whiteSet, options: nil, range: ix..<ix2)
+                let result = s.rangeOfCharacterFromSet(whiteSet, options: [], range: ix..<ix2)
                 let isWhiteSpace = result != nil
                 
                 if isWhiteSpace { break }
+                
+                index = index.predecessor()
             }
             
             return index
@@ -129,16 +131,16 @@ class TextDisplay : SKSpriteNode {
 
         while (label.frame.width >  self.contentWidth) && (self.size.width > 0) {
             let ratio : Float = Float(self.contentWidth) / Float(label.frame.width)
-            let index : String.Index = advance(label.text.startIndex, Int(ratio * Float(count(label.text))))
-            var newIndex : String.Index = findNearestWhitespaceSplit(to: index, given: label.text)
+            let index : String.Index = label.text!.startIndex.advancedBy(Int(ratio * Float(label.text!.characters.count)))
+            let newIndex : String.Index = findNearestWhitespaceSplit(to: index, given: label.text!)
             
-            var stringBeforeBreak = label.text.substringToIndex(newIndex)
+            var stringBeforeBreak = label.text!.substringToIndex(newIndex)
             stringBeforeBreak = stringBeforeBreak.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             
-            var stringAfterBreak = label.text.substringFromIndex(newIndex)
+            var stringAfterBreak = label.text!.substringFromIndex(newIndex)
             stringAfterBreak = stringAfterBreak.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             
-            if equal(label.text, stringBeforeBreak) { break }
+            if label.text!.characters.elementsEqual(stringBeforeBreak.characters) { break }
             
             label.text = stringBeforeBreak
             
@@ -150,7 +152,7 @@ class TextDisplay : SKSpriteNode {
         }
         
         
-        for var i : Int = 0; i < textNodes.count; i++ {
+        for i : Int in 0 ..< textNodes.count {
             let pos = CGPointMake(0, self.lineHeight * CGFloat(i) * -1)
             textNodes[i].position = pos
             
@@ -169,21 +171,16 @@ class TextDisplay : SKSpriteNode {
             else {
                 result += " "
             }
-            result += label.text
+            result += label.text!
         }
         
         return result
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch = (touches as! Set<UITouch>).first
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        guard let touch = touches.first else { return }
         
-        if touch == nil {
-            CGPoint(x: CGRectGetMidX(self.frame)*0.5, y: CGRectGetMidY(self.frame)*1.5)
-            return
-        }
-        
-        let touchPoint = touch!.locationInNode(borderNode)
+        let touchPoint = touch.locationInNode(borderNode)
         if borderNode.containsPoint(touchPoint) {
             self.touchHandler()
         }

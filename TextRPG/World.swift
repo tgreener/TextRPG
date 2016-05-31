@@ -13,7 +13,7 @@ class World : PortalListener, PickUpListener {
     var rooms : [Room] = [Room]()
     
     init() {
-        var player : Player = Player.instance
+        let player : Player = Player.instance
         
         let room0 : Room = WorldRoom()
         let room1 : Room = WorldRoom()

@@ -22,7 +22,7 @@ class InventoryComponent : Inventory {
         }
     }
     
-    func onGenerated(#entity: Entity) {
+    func onGenerated(entity entity: Entity) {
         insert(entity)
     }
 }
