@@ -29,7 +29,7 @@ class WorldClockTest: XCTestCase {
     }
     
     func testToString() -> Void {
-        assert(clock.toString() == "Day 10, 5:40", "Wrong string from toString(): \(clock.toString())")
+        assert(clock.toString() == "Day 10, 5:40:00", "Wrong string from toString(): \(clock.toString())")
     }
     
     func testProgressClock() -> Void {
